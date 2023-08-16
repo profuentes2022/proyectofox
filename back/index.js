@@ -21,7 +21,7 @@ database:'bwesvytlgr2xmrmbfmm5'
 const pool= mysql.createPool(config);
 
 app.post("/alumnos",(req,res)=>{
-   let codigo=req.body.codigo;
+ 
    let nombre=req.body.nombre;
    let grado=req.body.grado;
    let seccion=req.body.seccion
@@ -30,7 +30,7 @@ app.post("/alumnos",(req,res)=>{
    let  entrada =req.body.entrada;
    let  salida =req.body.salida;
 
-pool.query(`INSERT INTO alumnos (codigo, nombre, grado, seccion, aciento, fecha, entrada, salida) VALUES ('${codigo}','${nombre}','${grado}','${seccion}','${aciento}','${fecha}','${entrada}','${salida}')`,(err,result)=>{
+pool.query(`INSERT INTO alumnos (nombre, grado, seccion, aciento, fecha, entrada, salida) VALUES ('${nombre}','${grado}','${seccion}','${aciento}','${fecha}','${entrada}','${salida}')`,(err,result)=>{
 if (err){
 }
 res.send("ok");
